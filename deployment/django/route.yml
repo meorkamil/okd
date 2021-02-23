@@ -1,0 +1,29 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+    openshift.io/host.generated: "true"
+  creationTimestamp: null
+  labels:
+    app: django-app
+  name: django-app
+spec:
+  host: django-app-demo-project.127.0.0.1.nip.io
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: django-app
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: 2021-02-23T07:50:30Z
+      status: "True"
+      type: Admitted
+    host: django-app-demo-project.127.0.0.1.nip.io
+    routerName: router
+    wildcardPolicy: None
+

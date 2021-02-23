@@ -12,6 +12,7 @@ spec:
   metadata:
    labels:
     name: httpd
+    deploymentconfig: httpd
   spec:
    containers:
     - name: httpd
