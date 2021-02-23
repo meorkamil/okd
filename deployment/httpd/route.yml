@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: httpd
+spec:
+ host: myhttpd.example.com
+ port:
+  targetPort: 8080
+ to:
+  kind: Service
+  name: httpd
+  weight: 100
